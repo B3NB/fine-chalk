@@ -24,7 +24,7 @@ github_username:  bulenae
 
 # Build settings
 markdown: kramdown
-theme: jekyll-material-theme
+theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
 
