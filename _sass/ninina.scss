@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+// Imports
+
+@font-face {
+	font-family: 'EBGaramond';
+	src: url('fonts/EBGaramond-Regular.ttf') format('truetype');
+}
+
+// Defaults
+
+$base-font-family: "EBGaramond", "Garamond", serif !default;
+$base-font-size: 2.5vw !default;
+$base-line-height: 1.2 !default;
+
+$space-unit: 30px !default;
+
+$text-color: #202020 !default;
+$link-color: #007a0e !default;
+$background-color: #fcfcfc !default;
+
+@import 
+	"ninina/base", 
+	"ninina/layout"
+;

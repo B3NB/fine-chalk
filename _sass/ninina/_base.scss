@@ -1,0 +1,39 @@
+body {
+	font-family: $base-font-family;
+	font-size: 2.5vw;
+	
+	line-height: $base-line-height;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'kern' 1;
+	font-feature-settings: 'liga' 1;
+
+	color: $text-color;
+	background-color: $background-color;
+}
+
+@media all and (min-width: 1000px) { body { font-size: 24px; } }
+@media all and (max-width: 620px) { body { font-size: 18px;} }
+
+// Headers
+@for $i from 1 through 6 {
+	h#{$i} { 
+		font-size: (100% + 10%*(6-$i)); 
+		margin: 0 0 $space-unit/2 0;
+	}
+}
+
+p {
+	margin: 0 0 $space-unit/2 0;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+	transition: background 0.2s;
+	padding: 0 3px;
+	border-radius: 2px;
+
+	&:hover {
+		background: darken($background-color, 5%);
+	}
+}
