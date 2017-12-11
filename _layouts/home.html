@@ -9,13 +9,15 @@ layout: default
   {{ content }}
 
   {% for semester in site.semester %}
-    <h3>{{ semester }}</h3>
-    <ul>
-    {% for page in site.pages %}
-      {% if page.semester == semester %}
-        <li><a href="{{page.url | relative_url }}">{{ page.title | escape }}</a></li>
-      {% endif %}
-    {% endfor %}
-    </ul>
+    <p>
+      <strong>{{ semester }}</strong>
+      <ul>
+      {% for page in site.pages %}
+        {% if page.semester == semester %}
+          <li><a href="{{page.url | relative_url }}">{{ page.title | escape }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </p>
   {% endfor %}
 </div>
