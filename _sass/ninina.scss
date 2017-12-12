@@ -2,22 +2,32 @@
 
 // Imports
 
-@font-face {
-	font-family: 'EBGaramond';
-	src: url('fonts/EBGaramond-Regular.ttf') format('truetype');
-}
+// @font-face {
+// 	font-family: 'EBGaramond';
+// 	src: url('fonts/EBGaramond-Regular.ttf') format('truetype');
+// }
 
 // Defaults
 
-$base-font-family: "EBGaramond", "Garamond", serif !default;
+$primary-color: hsl(50, 90%, 50%);
+$secondary-color: hsl(150, 90%, 50%);
+
+$color-gradient: linear-gradient(to bottom right, $primary-color, $secondary-color);
+
+
+$base-font-family: 'PT Sans', sans-serif !default;
 $base-font-size: 2.5vw !default;
 $base-line-height: 1.2 !default;
 
+$content-font-family: 'PT Serif', serif !default;
+
 $space-unit: 30px !default;
 
-$text-color: #202020 !default;
-$link-color: #0072c6 !default;
-$background-color: #fcfcfc !default;
+$text-color: #000000 !default;
+$link-color: darken($secondary-color, 15%) !default;
+$background-color: #f5f5f5 !default;
+
+$header-background-color: #ffffff !default;
 
 @import 
 	"ninina/base", 

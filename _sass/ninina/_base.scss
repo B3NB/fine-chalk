@@ -1,6 +1,6 @@
 body {
 	font-family: $base-font-family;
-	font-size: 2.5vw;
+	// font-size: 2.5vw;
 	
 	line-height: $base-line-height;
 	text-rendering: optimizeLegibility;
@@ -11,16 +11,20 @@ body {
 	background-color: $background-color;
 }
 
-@media all and (min-width: 1000px) { body { font-size: 24px; } }
-@media all and (max-width: 620px) { body { font-size: 18px;} }
+@media all { html { font-size: 2.5vw; } }
+@media all and (min-width: 1000px) { html { font-size: 24px; } }
+@media all and (max-width: 620px) { html { font-size: 18px;} }
 
-// Headers
-@for $i from 1 through 6 {
-	h#{$i} { 
-		font-size: (100% + 10%*(6-$i)); 
-		margin: 0 0 $space-unit/2 0;
-	}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 600;
+	margin: 0 0 $space-unit/2 0; 
+	padding: 0;
 }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
 
 p {
 	margin: 0 0 $space-unit/2 0;
@@ -35,5 +39,11 @@ a {
 
 	&:hover {
 		background: darken($background-color, 5%);
+	}
+}
+
+.post-content {
+	p, span, div {
+		font-family: $content-font-family;
 	}
 }

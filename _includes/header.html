@@ -1,16 +1,51 @@
-<header class="wrapper" role="banner">
-  {% assign default_paths = site.pages | map: "path" %}
-  {% assign page_paths = site.header_pages | default: default_paths %}
-  <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+  <div class="container">
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
+    <div class="navbar-brand">
+      <a href="{{ "/" | relative_url }}" class="navbar-item">
+        <img src="{{ "/assets/logo.png" | relative_url }}" alt="chalk">
+      </a>
+      <div class="navbar-burger burger" data-target="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </div>
 
-  {% if page_paths %}
-    <nav>
-      {% for path in page_paths %}
-        {% assign my_page = site.pages | where: "path", path | first %}
-        {% if my_page.title %}
-        <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-        {% endif %}
+    <div class="navbar-menu" id="navMenu">
+      {% for semester in site.semester %}
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">{{ semester }}</a>
+        <div class="navbar-dropdown">
+          {% for page in site.pages %}
+            {% if page.semester == semester %}
+              <a class="navbar-item" href="{{page.url | relative_url }}">{{ page.title | escape }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
       {% endfor %}
-    </nav>
-  {% endif %}
-</header>
+    </div>
+  </div>
+
+  <!-- <div class="wrapper">
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
+    <a class="site-title" href="{{ "/" | relative_url }}">
+      <img src="{{ "/assets/logo64.png" | relative_url }}" alt="chalk">
+      <div class="site-title-text"><span>{{ site.title | escape }}</span><small>Benedikt Böhme</small></div>
+    </a>
+   -->
+    <!-- {% if page_paths %}
+      <nav>
+        {% for path in page_paths %}
+          {% assign my_page = site.pages | where: "path", path | first %}
+          {% if my_page.title %}
+          <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    {% endif %} -->
+  </div>
+</nav>
