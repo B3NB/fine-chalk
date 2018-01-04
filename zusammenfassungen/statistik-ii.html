@@ -10,9 +10,25 @@ semester: "Wintersemester 2017/18"
     Eine <emph>Einpunktverteilung</emph> hat die Eigenschaft, dass an einer gewissen Stelle <span class="mathr">a</span>, die Dichte <span class="mathr">f(a)</span> gleich eins und sonst (mit <span class="mathr">x \not = a</span>) gleich null ist.
 </p>
 
+<h2>Eigenschaften von Parameter</h2>
+<h3>Erwartungswert</h3>
+<p>
+    Der Erwartungswert ist linear (dh. es gilt <span class="mathr">E(a X_1 + b X_2) = a E(X_1) + b E(X_2)</span>). Damit gilt also insbesondere <span class="mathr">E(a + b X) = a + b E(X)</span> mit beliebigen <span class="mathr">a</span> und <span class="mathr">b</span>.
+</p>
+
+<h3>Varianz</h3>
+<p>Die Varianz ist die quadrierte Abweichung der Zufallsvariablen vom Erwartungswert.</p>
+<p class="mathr">
+    Var(X) =  E((X-E(X))^2) = E(X^2) + (E(X))^2
+</p>
+<p>Es gilt außerdem für lineare Transformationen:</p>
+<p class="mathr">
+    Var(a + bX) = b^2Var(X)
+</p>
+<p> mit beliebigen <span class="mathr">a</span> und <span class="mathr">b</span>.</p>
 <h2>Stichproben</h2>
 <p>
-    Sei eine <span class="mathr">c = \pm\sqrt{a^2 + b^2}</span> 
+    
 </p>
 
 <article class="message is-primary">
@@ -41,3 +57,16 @@ semester: "Wintersemester 2017/18"
         <p>ist.</p>
     </div>
 </article>
+
+<h2>Schätzfunktion</h2>
+
+<table>
+    <tr>
+        <th><span class="mathr">\theta</span></th>
+        <th><span class="mathr">\hat{\theta _n}</span></th>
+        <th>Bedingung</th>
+        <th>Var(<span class="mathr">\hat{\theta _n}</span>)</th>
+        <th>Verzerr.</th>
+        <th>MSE</th>
+    </tr>
+</table>
