@@ -4,33 +4,6 @@ title:  "Statistik II"
 date:   2017-12-09 15:48:17 +0100
 semester: "Wintersemester 2017/18"
 ---
-
-<h2>Ergänzende Verteilungen</h2>
-<p>
-    Eine <emph>Einpunktverteilung</emph> hat die Eigenschaft, dass an einer gewissen Stelle <span class="mathr">a</span>, die Dichte <span class="mathr">f(a)</span> gleich eins und sonst (mit <span class="mathr">x \not = a</span>) gleich null ist.
-</p>
-
-<h2>Eigenschaften von Parameter</h2>
-<h3>Erwartungswert</h3>
-<p>
-    Der Erwartungswert ist linear (dh. es gilt <span class="mathr">E(a X_1 + b X_2) = a E(X_1) + b E(X_2)</span>). Damit gilt also insbesondere <span class="mathr">E(a + b X) = a + b E(X)</span> mit beliebigen <span class="mathr">a</span> und <span class="mathr">b</span>.
-</p>
-
-<h3>Varianz</h3>
-<p>Die Varianz ist die quadrierte Abweichung der Zufallsvariablen vom Erwartungswert.</p>
-<p class="mathr">
-    Var(X) =  E((X-E(X))^2) = E(X^2) + (E(X))^2
-</p>
-<p>Es gilt außerdem für lineare Transformationen:</p>
-<p class="mathr">
-    Var(a + bX) = b^2Var(X)
-</p>
-<p> mit beliebigen <span class="mathr">a</span> und <span class="mathr">b</span>.</p>
-<h2>Stichproben</h2>
-<p>
-    
-</p>
-
 <article class="message is-primary">
     <div class="message-header">
         <p>Tipp</p>
@@ -58,15 +31,144 @@ semester: "Wintersemester 2017/18"
     </div>
 </article>
 
+<h2>Ergänzende Verteilungen</h2>
+<p>
+    Eine <em>Einpunktverteilung</em> hat die Eigenschaft, dass an einer gewissen Stelle <span class="mathr">a</span>, die Dichte <span class="mathr">f(a)</span> gleich eins und sonst (mit <span class="mathr">x \not = a</span>) gleich null ist.
+</p>
+
+<h2>Bivariate Statistik</h2>
+<h3>Unabhängigkeit</h3>
+<p>
+    Sind zwei Zufallsvariablen unabhänging gilt:
+    <ul>
+        <li>für die Dichte <span class="mathr">f(x,y) = f(x) \cdot f(y)</span></li>
+        <li>für den Erwartungswert <span class="mathr">E(X,Y) = E(X) * E(Y)</span></li>
+        <li>für die Varianz <span class="mathr">Var(X + Y) = Var(X) + Var(Y)</span> und <span class="mathr">Var(X - Y) = Var(X) + Var(Y)</span></li>
+        <li>für die Kovarianz <span class="mathr">Cov(X, Y) = 0</span></li>
+    </ul>
+</p>
+
+<h3>Dichte einer Summe von Zufallsvariablen</h3>
+<p>
+    Die Dichte einer Summe von Zufallsvariablen ist
+</p>
+<p class="mathr">
+    f_{X+Y}(s) = \displaystyle\int^{+\infty}_{-\infty}f_{XY}(x,s-x)dx
+</p>
+<p>
+    Bei Unabhängigkeit der Zufallsvariablen folgt aus <span class="mathr">f_{XY}(x,y) = f_X(x) \cdot f_Y(y)</span>,  
+</p>
+<p class="mathr">
+    f_{X+Y}(s) = \displaystyle\int^{+\infty}_{-\infty} f_X(x)f_Y(s-x)dx
+</p>
+
+<h2>Eigenschaften von Parameter</h2>
+<h3>Erwartungswert</h3>
+<p>
+    Der Erwartungswert ist linear (dh. es gilt <span class="mathr">E(a X_1 + b X_2) = a E(X_1) + b E(X_2)</span>). Damit gilt also insbesondere <span class="mathr">E(a + b X) = a + b E(X)</span> mit beliebigen <span class="mathr">a</span> und <span class="mathr">b</span>.
+</p>
+
+<h3>Varianz</h3>
+<p>Die Varianz ist die quadrierte Abweichung der Zufallsvariablen vom Erwartungswert.</p>
+<p class="mathr">
+    Var(X) =  E((X-E(X))^2) = E(X^2) + (E(X))^2
+</p>
+<p>Es gilt außerdem für lineare Transformationen:</p>
+<p class="mathr">
+    Var(a + bX) = b^2Var(X)
+</p>
+<p> mit beliebigen <span class="mathr">a</span> und <span class="mathr">b</span>.</p>
+<h2>Stichproben</h2>
+<p>
+    
+</p>
+
+
+
 <h2>Schätzfunktion</h2>
 
-<table>
+<h3>Typische Schätzfunktionen</h3>
+<table class="table">
     <tr>
         <th><span class="mathr">\theta</span></th>
-        <th><span class="mathr">\hat{\theta _n}</span></th>
+        <th><span class="mathr">{\hat{\theta}}_n</span></th>
         <th>Bedingung</th>
-        <th>Var(<span class="mathr">\hat{\theta _n}</span>)</th>
+        <th><span class="mathr">Var({\hat{\theta}}_n)</span></th>
         <th>Verzerr.</th>
         <th>MSE</th>
     </tr>
+    <tr>
+        <td rowspan="2"><span class="mathr">\mu</span></td>
+        <td rowspan="2"><span class="mathr">\bar{X}=\frac 1 n \displaystyle\sum^n_{i=1} X_i</span></td>
+        <td><span class="mathr">\sigma</span> bekannt</td>
+        <td><span class="mathr">\frac {\sigma^2} n</span></td>
+        <td>0</td>
+        <td><span class="mathr">\frac {\sigma^2} n</span></td>
+    </tr>
+    <tr>
+        <td><span class="mathr">\sigma</span> unbekannt</td>
+        <td><span class="mathr">\frac {s^2} n</span></td>
+        <td>0</td>
+        <td><span class="mathr">\frac {s^2} n</span></td>
+    </tr>
+    <tr>
+        <td><span class="mathr">\pi</span></td>
+        <td><span class="mathr">\hat{\pi}=\frac 1 n \displaystyle\sum^n_{i=1} X_i</span></td>
+        <td>einfach ZA</td>
+        <td><span class="mathr">\frac {\pi (1-\pi)} n</span></td>
+        <td>0</td>
+        <td><span class="mathr">\frac {\pi (1-\pi)} n</span></td>
+    </tr>
+    <tr>
+        <td rowspan="3"><span class="mathr">\sigma^2</span></td>
+        <td><span class="mathr">{S^*}^2 = \frac 1 n \displaystyle\sum^n_{i=1} (X_i - \mu)^2</span></td>
+        <td><span class="mathr">\mu</span> bekannt</td>
+        <td><span class="mathr">\frac {2\sigma^4} n</span></td>
+        <td>0</td>
+        <td><span class="mathr">\frac {2\sigma^4} n</span></td>
+    </tr>
+    <tr>
+        <td><span class="mathr">S^2 = \frac 1 {n-1} \displaystyle\sum^n_{i=1} (X_i - \bar{X})^2</span></td>
+        <td><span class="mathr">\mu</span> unbekannt</td>
+        <td><span class="mathr">\frac {2\sigma^4} {n - 1}</span></td>
+        <td>0</td>
+        <td><span class="mathr">\frac {2\sigma^4} {n - 1}</span></td>
+    </tr>
+    <tr>
+        <td><span class="mathr">{S'}^2 = \frac 1 n \displaystyle\sum^n_{i=1} (X_i - \bar{X})^2</span></td>
+        <td><span class="mathr">\mu</span> unbekannt</td>
+        <td><span class="mathr">\frac {2\sigma^4(n - 1)} {n^2}</span></td>
+        <td><span class="mathr">-\frac {\sigma^2} n</span></td>
+        <td><span class="mathr">\frac {2\sigma^4(2n - 1)} {n^2}</span></td>
+    </tr>
 </table>
+
+<h3>Eigenschaften</h3>
+<p>
+    Eine Schätzfunktion <span class="mathr">\hat{\theta}_n</span> heißt <em>erwartungstreu</em> oder <em>unverzerrt</em> wenn sie gleich <span class="mathr">E(\hat{\theta}_n) = \theta</span> ist. Sie heißt <em>asymptotisch erwartungstreu</em> wenn <span class="mathr">\displaystyle\lim_{n\to \infty} E((\hat{\theta}_n) = \theta</span> gilt.
+</p>
+
+<p>
+    Eine Voraussetzung für den Vergleich der Effizienzen ist die Erwartungstreue beider Schätzfunktionen. Eine Schätzfunktion <span class="mathr">\hat{\theta}_n^{(1)}</span> heißt <em>relativ effizient</em> zu <span class="mathr">\hat{\theta}_n^{(2)}</span>, wenn <span class="mathr">Var(\hat{\theta}_n^{(1)}) \leq Var(\hat{\theta}_n^{(2)})</span>. Sie ist <em>absolut effizient</em> wenn sie im Vergleich zu jeder anderen erwartungstreuen Schätzfunktion für <span class="mathr">\theta</span> die kleinste Varianz hat.
+</p>
+
+<p>
+    Eine Schätzfunktion <span class="mathr">\hat{\theta}_n</span> heißt <em>konsistent</em>, wenn <span class="mathr">\displaystyle\lim_{n\to\infty} E(\hat{\theta}_n) = \theta</span> und <span class="mathr">\displaystyle\lim_{n\to\infty} Var(\hat{\theta}_n) = 0</span> gelten.
+</p>
+
+<article class="message is-info">
+        <div class="message-header">
+            <p>Ergänzung</p>
+        </div>
+        <div class="message-body">
+            <p class="mathr">
+                \displaystyle\lim_{n\to\infty} P(|\hat{\theta}_n - \theta|>\varepsilon) = 0
+            </p>
+            <p>
+                für beliebiges kleines <span class="mathr">\varepsilon > 0</span>.
+            </p>
+        </div>
+    </article>
+
+<h2>Referenz</h2>
+<p>Inhalt basiert auf den VL-Folien aus der Veranstaltung <q>Statistik II</q> am KIT aus dem Wintersemester 2017/1018.</p>
