@@ -23,7 +23,7 @@ semester:
   - "Wintersemester 2017/18"
 
 baseurl: "/fine-chalk" # the subpath of your site, e.g. /blog
-github_username: bulenae
+github_username: beneboe
 
 # Build settings
 markdown: kramdown
